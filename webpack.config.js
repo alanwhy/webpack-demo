@@ -8,9 +8,16 @@ module.exports = {
   // 符合规则 去找loader去解决打包问题
   module: {
     rules: [{
-      test: /\.jpg/,
+      test: /\.(jpg|png|gif)$/,
       use: {
-        loader: "file-loader"
+        loader: "url-loader",
+        options: {
+          // 保证打包后名称一致 placeholder 占位符
+          name: "[name]_[hash].[ext]",
+          outputPath: "images/",
+          // 限制大包大小 单位是kb
+          limit: 10240
+        }
       }
     }]
   },
