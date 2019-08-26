@@ -6,10 +6,18 @@
 // js 模块打包工具 -> css png等
 
 // import Header from "./header.js"
+import avatar from "./avatar.jpg"
 
-var Header = require("./header.js");
+var img = new Image();
+img.src = avatar;
 
+var root = document.getElementById("root")
+root.append(img)
+// var Header = require("./header.js");
+// var avatar = require("./avatar.jpg");
+
+// console.log(avatar)
 // var style = require("./index.css");
 // import style from "./index.css"
 
-new Header()
+// new Header()
