@@ -8,9 +8,12 @@ const {
 
 module.exports = {
   mode: "production", // development
+  // 查看源文件的位置，source-map为打包后的代码与源代码的映射关系
+  // 线上代码一般使用 production devtool: "cheap-module-source-map"
+  // 如果是开发环境的话 development devtool: "cheap-module-eval-source-map"
+  devtool: "cheap-module-eval-source-map",
   entry: {
-    main: "./src/index.js",
-    sub: "./src/index.js"
+    main: "./src/index.js"
   },
   // 符合规则 去找loader去解决打包问题
   module: {
@@ -48,7 +51,6 @@ module.exports = {
     template: "src/index.html"
   }), new CleanWebpackPlugin()],
   output: {
-    publicPath: "http://cdn.com.cn",
     filename: "[name].js",
     path: path.resolve(__dirname, "dist")
   }
