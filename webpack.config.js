@@ -1,9 +1,16 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const {
+  CleanWebpackPlugin
+} = require("clean-webpack-plugin");
+
+// plugin 可以在webpack运行到某个时候 进行一些事情
 
 module.exports = {
   mode: "production", // development
   entry: {
-    main: "./src/index.js"
+    main: "./src/index.js",
+    sub: "./src/index.js"
   },
   // 符合规则 去找loader去解决打包问题
   module: {
@@ -36,8 +43,13 @@ module.exports = {
       }
     }]
   },
+  plugins: [new HtmlWebpackPlugin({
+    // 配置模板
+    template: "src/index.html"
+  }), new CleanWebpackPlugin()],
   output: {
-    filename: "bundle.js",
+    publicPath: "http://cdn.com.cn",
+    filename: "[name].js",
     path: path.resolve(__dirname, "dist")
   }
 }
