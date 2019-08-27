@@ -21,7 +21,19 @@ module.exports = {
       }
     }, {
       test: /\.scss$/,
-      use: ["style-loader", "css-loader", "sass-loader", "postcss-loader"]
+      use: ["style-loader", {
+        loader: "css-loader",
+        options: {
+          importLoaders: 2,
+          // 开启css的模块化打包
+          // modules: true
+        }
+      }, "sass-loader", "postcss-loader"]
+    }, {
+      test: /\.(eot|ttf|svg|woff)$/,
+      use: {
+        loader: "file-loader"
+      }
     }]
   },
   output: {

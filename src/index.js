@@ -6,15 +6,20 @@
 // js 模块打包工具 -> css png等
 
 // import Header from "./header.js"
-import avatar from "./avatar.jpg"
-import "./index.scss"
+// import avatar from "./avatar.jpg";
+// import style from "./index.scss"
+// import createAvatar from "./createAvatar.js"
 
-var img = new Image();
-img.src = avatar;
-img.classList.add("avatar")
+// createAvatar();
 
-var root = document.getElementById("root")
-root.append(img)
+// var img = new Image();
+// img.src = avatar;
+// img.classList.add(style.avatar)
+
+// var root = document.getElementById("root")
+// root.append(img)
+
+
 // var Header = require("./header.js");
 // var avatar = require("./avatar.jpg");
 
@@ -23,3 +28,8 @@ root.append(img)
 // import style from "./index.css"
 
 // new Header()
+
+var root = document.getElementById("root");
+import "./index.scss";
+
+root.innerHTML = "<div class='iconfont iconarrowb'></div>"
