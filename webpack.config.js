@@ -3,6 +3,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const {
   CleanWebpackPlugin
 } = require("clean-webpack-plugin");
+const webpack = require("webpack");
+
 
 // plugin 可以在webpack运行到某个时候 进行一些事情
 
@@ -21,7 +23,10 @@ module.exports = {
     contentBase: "./dist",
     // 自动打开浏览器
     open: true,
-    port: 8080
+    port: 8080,
+    // HMR
+    hot: true,
+    hotOnly: true
     // proxy: {
     //   "/api": "http://localhost:3000"
     // }
@@ -55,12 +60,18 @@ module.exports = {
       use: {
         loader: "file-loader"
       }
+    }, {
+      test: /\.css$/,
+      use: ["style-loader", "css-loader", "postcss-loader"]
     }]
   },
   plugins: [new HtmlWebpackPlugin({
-    // 配置模板
-    template: "src/index.html"
-  }), new CleanWebpackPlugin()],
+      // 配置模板
+      template: "src/index.html"
+    }),
+    new CleanWebpackPlugin(),
+    new webpack.HotModuleReplacementPlugin()
+  ],
   output: {
     publicPath: "/",
     filename: "[name].js",
