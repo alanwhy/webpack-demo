@@ -15,6 +15,17 @@ module.exports = {
   entry: {
     main: "./src/index.js"
   },
+  // webpack-dev-server的相关配置
+  devServer: {
+    // 服务器地址访问目录
+    contentBase: "./dist",
+    // 自动打开浏览器
+    open: true,
+    port: 8080
+    // proxy: {
+    //   "/api": "http://localhost:3000"
+    // }
+  },
   // 符合规则 去找loader去解决打包问题
   module: {
     rules: [{
@@ -51,6 +62,7 @@ module.exports = {
     template: "src/index.html"
   }), new CleanWebpackPlugin()],
   output: {
+    publicPath: "/",
     filename: "[name].js",
     path: path.resolve(__dirname, "dist")
   }
