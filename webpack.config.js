@@ -5,6 +5,30 @@ const {
 } = require("clean-webpack-plugin");
 const webpack = require("webpack");
 
+// babel配置
+// 业务代码配置
+// presets: [
+//   ["@babel/preset-env", {
+//     // 对浏览器进行项目运行的控制打包
+//     targets: {
+//       // edge: "17",
+//       // firefox: "60",
+//       chrome: "67",
+//       // safari: "11.1"
+//     },
+//     // 根据业务代码进行es5的翻译 减少代码体积
+//     useBuiltIns: "usage"
+//   }],
+// ]
+// 库代码配置 不存在全局污染 使用闭包
+// "plugins": [
+//   ["@babel/plugin-transform-runtime", {
+//     "corejs": 2,
+//     "helpers": true,
+//     "regenerator": true,
+//     "useESModules": false
+//   }]
+// ]
 
 // plugin 可以在webpack运行到某个时候 进行一些事情
 
@@ -37,22 +61,7 @@ module.exports = {
       // es5语法翻译
       test: /\.js$/,
       exclude: /node_modules/,
-      loader: "babel-loader",
-      options: {
-        presets: [
-          ["@babel/preset-env", {
-            // 对浏览器进行项目运行的控制打包
-            targets: {
-              // edge: "17",
-              // firefox: "60",
-              chrome: "67",
-              // safari: "11.1"
-            },
-            // 根据业务代码进行es5的翻译 减少代码体积
-            useBuiltIns: "usage"
-          }],
-        ]
-      }
+      loader: "babel-loader"
     }, {
       test: /\.(jpg|png|gif)$/,
       use: {
