@@ -1,6 +1,8 @@
-// tree shaking 只支持module的es引入
-import {
-  add
-} from "./math.js"
 
-add(1, 2)
+import _ from "lodash";
+
+
+console.log(_.join(["a", "b", "c"], "***"));
+
+
+//code splitting 对代码进行拆分

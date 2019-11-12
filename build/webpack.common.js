@@ -52,8 +52,14 @@ module.exports = {
     }),
     new CleanWebpackPlugin()
   ],
+  optimization: {
+    // 做代码分割
+    splitChunks: {
+      chunks: "all"
+    }
+  },
   output: {
     filename: "[name].js",
-    path: path.resolve(__dirname, "dist")
+    path: path.resolve(__dirname, "./../dist")
   }
 }
