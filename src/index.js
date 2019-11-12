@@ -1,8 +1,14 @@
+function getComponent() {
+  return import("lodash").then(({
+    default: _
+  }) => {
+    var element = document.createElement("div")
+    element.innerHTML = _.join(["dell", "lee"], "-")
+    return element
+  })
+}
 
-import _ from "lodash";
 
-
-console.log(_.join(["a", "b", "c"], "***"));
-
-
-//code splitting 对代码进行拆分
+getComponent().then(element => {
+  document.body.appendChild(element)
+})
