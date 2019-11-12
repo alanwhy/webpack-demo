@@ -1,5 +1,6 @@
 function getComponent() {
-  return import("lodash").then(({
+  // 魔法注释写法
+  return import( /* webpackChunkName:"lodash" */ "lodash").then(({
     default: _
   }) => {
     var element = document.createElement("div")

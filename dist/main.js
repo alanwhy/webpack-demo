@@ -92,7 +92,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "30a5ad6a2e5582d97e91";
+/******/ 	var hotCurrentHash = "0d12f6b0f1ef10e3c74e";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -746,7 +746,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "" + ({"lodash":"lodash"}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -918,7 +918,7 @@
 /*! all exports used */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("function getComponent() {\n  return new Promise(resolve => {\n    __webpack_require__.e(/*! require.ensure */ 0).then((require => {\n      resolve(__webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\"));\n    }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);\n  }).then(({\n    default: _\n  }) => {\n    var element = document.createElement(\"div\");\n    element.innerHTML = _.join([\"dell\", \"lee\"], \"-\");\n    return element;\n  });\n}\n\ngetComponent().then(element => {\n  document.body.appendChild(element);\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvaW5kZXguanMuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvaW5kZXguanM/YjYzNSJdLCJzb3VyY2VzQ29udGVudCI6WyJmdW5jdGlvbiBnZXRDb21wb25lbnQoKSB7XHJcbiAgcmV0dXJuIGltcG9ydChcImxvZGFzaFwiKS50aGVuKCh7XHJcbiAgICBkZWZhdWx0OiBfXHJcbiAgfSkgPT4ge1xyXG4gICAgdmFyIGVsZW1lbnQgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwiZGl2XCIpXHJcbiAgICBlbGVtZW50LmlubmVySFRNTCA9IF8uam9pbihbXCJkZWxsXCIsIFwibGVlXCJdLCBcIi1cIilcclxuICAgIHJldHVybiBlbGVtZW50XHJcbiAgfSlcclxufVxyXG5cclxuXHJcbmdldENvbXBvbmVudCgpLnRoZW4oZWxlbWVudCA9PiB7XHJcbiAgZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChlbGVtZW50KVxyXG59KSJdLCJtYXBwaW5ncyI6IkFBQUE7QUFDQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQ0E7QUFEQTtBQUdBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUVBO0FBQ0E7QUFDQSIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./src/index.js\n");
+eval("function getComponent() {\n  // 魔法注释写法\n  return __webpack_require__.e(/*! import() | lodash */ \"lodash\").then(__webpack_require__.t.bind(null, /*! lodash */ \"./node_modules/lodash/lodash.js\", 7)).then(({\n    default: _\n  }) => {\n    var element = document.createElement(\"div\");\n    element.innerHTML = _.join([\"dell\", \"lee\"], \"-\");\n    return element;\n  });\n}\n\ngetComponent().then(element => {\n  document.body.appendChild(element);\n});//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvaW5kZXguanMuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvaW5kZXguanM/YjYzNSJdLCJzb3VyY2VzQ29udGVudCI6WyJmdW5jdGlvbiBnZXRDb21wb25lbnQoKSB7XHJcbiAgLy8g6a2U5rOV5rOo6YeK5YaZ5rOVXHJcbiAgcmV0dXJuIGltcG9ydCggLyogd2VicGFja0NodW5rTmFtZTpcImxvZGFzaFwiICovIFwibG9kYXNoXCIpLnRoZW4oKHtcclxuICAgIGRlZmF1bHQ6IF9cclxuICB9KSA9PiB7XHJcbiAgICB2YXIgZWxlbWVudCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIilcclxuICAgIGVsZW1lbnQuaW5uZXJIVE1MID0gXy5qb2luKFtcImRlbGxcIiwgXCJsZWVcIl0sIFwiLVwiKVxyXG4gICAgcmV0dXJuIGVsZW1lbnRcclxuICB9KVxyXG59XHJcblxyXG5cclxuZ2V0Q29tcG9uZW50KCkudGhlbihlbGVtZW50ID0+IHtcclxuICBkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKGVsZW1lbnQpXHJcbn0pIl0sIm1hcHBpbmdzIjoiQUFBQTtBQUNBO0FBQ0EsNEpBQUE7QUFDQTtBQURBO0FBR0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBRUE7QUFDQTtBQUNBIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./src/index.js\n");
 
 /***/ })
 

@@ -54,8 +54,13 @@ module.exports = {
   ],
   optimization: {
     // 做代码分割
+    // https://www.webpackjs.com/plugins/split-chunks-plugin/
     splitChunks: {
-      chunks: "all"
+      chunks: "all",
+      cacheGroups: {
+        vendors: false,
+        default: false
+      }
     }
   },
   output: {
